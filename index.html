@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Кыргызстан — аудиогид</title>
+<meta name="description" content="Офлайн-аудиогид по Кыргызстану: рассказы о местах, фото тогда и сейчас.">
+<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1824" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Кыргызстан">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="boot" class="boot">
+  <div class="boot-in">
+    <img src="icons/icon-192.png" width="96" height="96" alt="">
+    <p>Загрузка гида…</p>
+    <noscript><p>Для работы приложения нужен JavaScript.</p></noscript>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <header id="topbar">
+    <div class="brand">Кыргызстан <span>аудиогид</span></div>
+    <div class="chips-top">
+      <button id="gpschip" class="gpschip off" type="button" aria-label="Состояние GPS"><i></i><span class="conn-t">GPS</span></button>
+      <button id="conn" class="conn on" type="button" aria-label="Состояние сети"><i></i><span class="conn-t">Онлайн</span></button>
+    </div>
+  </header>
+  <div id="updbar" hidden><span>Доступна новая версия</span><button id="updbtn" type="button">Обновить</button></div>
+
+  <main id="screens">
+    <section id="v-nearby" class="screen active" aria-label="Рядом"></section>
+    <section id="v-map" class="screen" aria-label="Карта"></section>
+    <section id="v-catalog" class="screen" aria-label="Каталог"></section>
+    <section id="v-more" class="screen" aria-label="Ещё"></section>
+  </main>
+
+  <div id="nowbar" hidden></div>
+
+  <nav id="tabbar" aria-label="Разделы">
+    <button class="tab on" data-tab="nearby" type="button" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg><span>Рядом</span></button>
+    <button class="tab" data-tab="map" type="button" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4z"/><path d="M9 4v14M15 6v14"/></svg><span>Карта</span></button>
+    <button class="tab" data-tab="catalog" type="button" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.8" cy="6" r="1"/><circle cx="3.8" cy="12" r="1"/><circle cx="3.8" cy="18" r="1"/></svg><span>Каталог</span></button>
+    <button class="tab" data-tab="more" type="button" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg><span>Ещё</span></button>
+  </nav>
+
+  <div id="sheet" class="sheet" hidden></div>
+  <div id="onboard" class="onboard" hidden></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="dbg" hidden></div>
+</div>
+
+<script src="js/core.js"></script>
+<script src="js/data.js"></script>
+<script src="js/gps.js"></script>
+<script src="js/player.js"></script>
+<script src="js/guide.js"></script>
+<script src="js/online.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/map.js"></script>
+<script src="js/v-nearby.js"></script>
+<script src="js/v-catalog.js"></script>
+<script src="js/v-card.js"></script>
+<script src="js/v-more.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
